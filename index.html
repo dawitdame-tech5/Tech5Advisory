@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan Your Programme | TECH5</title>
+<meta name="description" content="Plan your national trust and identity programme with TECH5: the platform, and the policy, architecture and investment advisory that gets it used. Request a free consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#123b4f; --navy-deep:#0b2a3a; --teal:#0b6e66; --teal-soft:#e6f1ef;
+    --orange:#f26522; --ink:#1d2b33; --muted:#5d6b73; --line:#dfe5e8;
+    --bg:#ffffff; --bg-alt:#f4f7f8; --blue:#3c5a99;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+  h1,h2,h3{color:var(--navy);line-height:1.15;font-weight:700}
+
+  /* ---------- LAYOUT ---------- */
+  .plan{padding:44px 0 40px}
+  .grid{display:grid;grid-template-columns:1fr 500px;gap:56px;align-items:start}
+
+  /* ---------- LEFT ---------- */
+  h1{font-size:clamp(30px,3.7vw,44px);letter-spacing:-.01em;margin:10px 0 14px}
+  .lead{font-size:16.5px;font-weight:300;color:var(--muted);max-width:560px}
+  .lead b{font-weight:600;color:var(--navy)}
+
+  .path{margin-top:28px;border:1px solid var(--line);border-radius:6px;padding:20px 22px 16px;position:relative;background:#fff}
+  .path::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:3px;border-radius:6px 6px 0 0;background:linear-gradient(90deg,var(--navy),var(--teal) 60%,var(--orange))}
+  .path-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+  .path-head h2{font-size:18px}
+  .path-head h2 .dpe{color:var(--teal);box-shadow:inset 0 -3px 0 var(--orange)}
+  .path-head span{font-size:12px;color:var(--muted)}
+  .steps{list-style:none;position:relative}
+  .steps::before{content:"";position:absolute;left:12px;top:14px;bottom:14px;width:2px;background:linear-gradient(180deg,var(--navy),var(--teal) 70%,var(--orange))}
+  .steps li{display:grid;grid-template-columns:26px 1fr auto;gap:12px;align-items:center;padding:6px 0}
+  .dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:12px;color:#fff;background:var(--navy);position:relative;box-shadow:0 0 0 3px #fff}
+  .s4 .dot{background:var(--teal)} .s5 .dot{background:var(--orange)}
+  .steps b{font-size:14px;color:var(--navy);font-weight:600}
+  .steps small{display:block;font-size:12.5px;color:var(--muted)}
+  .ph{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:3px;background:var(--teal-soft);color:var(--teal)}
+  .ph-b{background:#e3eaee;color:var(--navy)} .ph-a{background:#fdeee6;color:#c24e14}
+  .repeat{display:flex;align-items:center;gap:10px;margin-top:8px;padding-top:10px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--navy)}
+  .repeat svg{flex:none;color:var(--orange)}
+
+  .advisory{display:grid;grid-template-columns:40px 1fr;gap:14px;margin-top:18px;padding:16px 18px;background:var(--bg-alt);border-radius:6px;border-left:3px solid var(--teal)}
+  .adv-mark{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--teal);display:grid;place-items:center}
+  .advisory p{font-size:13px;color:var(--muted);margin-top:4px}
+  .advisory p b{color:var(--navy);font-weight:600}
+  .adv-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .adv-tags span{font-size:10.5px;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--navy)}
+  .adv-tags span:nth-child(2){color:var(--teal)} .adv-tags span:nth-child(3){color:#c24e14}
+
+  /* ---------- FORM ---------- */
+  .frame{position:relative;padding:12px}
+  .frame::before,.frame::after{content:"";position:absolute;width:36px;height:36px;pointer-events:none}
+  .frame::before{top:0;left:0;border-top:2px solid var(--orange);border-left:2px solid var(--orange)}
+  .frame::after{bottom:0;right:0;border-bottom:2px solid var(--navy);border-right:2px solid var(--navy)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 18px 50px -24px rgba(18,59,79,.35);overflow:hidden}
+  .card-head{background:var(--navy-deep);padding:18px 24px 16px}
+  .card-head .eyebrow{color:#7fc4bc}
+  .card-head h2{color:#fff;font-size:21px;margin:4px 0 2px}
+  .card-head p{font-size:12.5px;color:#b9c8cf}
+  .progress{display:flex;gap:4px;margin-top:12px}
+  .progress i{flex:1;height:3px;background:rgba(255,255,255,.18);border-radius:2px;transition:background .25s}
+  .progress i.on{background:var(--teal)}
+  .progress i.on:last-child{background:var(--orange)}
+  .card-body{padding:18px 24px 20px}
+  .q{margin-bottom:16px}
+  .q-label{display:flex;gap:8px;align-items:baseline;font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:8px}
+  .q-num{font-size:11.5px;color:var(--orange);font-weight:700}
+  .hint{font-weight:400;color:var(--muted);font-size:11.5px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{position:relative}
+  .chip input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+  .chip span{display:inline-block;padding:6px 11px;border:1px solid var(--line);border-radius:4px;font-size:12.5px;font-weight:500;color:var(--ink);background:#fff;transition:all .15s;cursor:pointer;user-select:none}
+  .chip input:hover + span{border-color:var(--teal)}
+  .chip input:focus-visible + span{outline:2px solid var(--teal);outline-offset:2px}
+  .chip input:checked + span{background:var(--teal);border-color:var(--teal);color:#fff}
+  .services{border:1px solid var(--line);border-radius:5px}
+  .pillar{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:start;padding:9px 10px;border-top:1px solid var(--line)}
+  .pillar:first-child{border-top:0}
+  .pillar-name{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;padding:6px 0 0 8px;border-left:3px solid currentColor}
+  .services .chip span{font-size:12px;padding:5px 9px}
+  .p1 .pillar-name{color:var(--teal)} .p2 .pillar-name{color:var(--navy)} .p3 .pillar-name{color:#c24e14} .p4 .pillar-name{color:var(--blue)}
+  .p2 .chip input:checked + span{background:var(--navy);border-color:var(--navy)}
+  .p3 .chip input:checked + span{background:var(--orange);border-color:var(--orange)}
+  .p4 .chip input:checked + span{background:var(--blue);border-color:var(--blue)}
+  .notsure{margin-top:6px}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .fields .full{grid-column:1/-1}
+  input[type=text],input[type=email]{width:100%;font:inherit;font-size:13.5px;padding:9px 11px;border:1px solid var(--line);border-radius:4px;color:var(--ink);background:#fff}
+  input[type=text]:focus,input[type=email]:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft)}
+  .partner-only{display:none}
+  form.is-partner .partner-only{display:block}
+  .err{display:none;font-size:11.5px;color:#b3261e;margin-top:5px}
+  .q.invalid .err{display:block}
+  .q.invalid .chip span,.q.invalid input[aria-invalid=true]{border-color:#e3a39d}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font:inherit;font-size:15px;font-weight:600;padding:13px 20px;border-radius:5px;border:0;background:var(--teal);color:#fff;cursor:pointer;transition:background .15s}
+  .btn:hover{background:#095a54}
+  .btn:disabled{opacity:.6;cursor:wait}
+  .covers{display:flex;flex-wrap:wrap;gap:4px 14px;margin:10px 0 0;font-size:11.5px;color:var(--muted);list-style:none}
+  .covers li::before{content:"✓ ";color:var(--teal);font-weight:700}
+  .fine{margin-top:10px;font-size:11.5px;color:var(--muted)}
+  .fine a{color:var(--teal);font-weight:600}
+  .hp{position:absolute;left:-9999px}
+  .thanks{display:none;padding:28px 24px}
+  .thanks .tick{width:48px;height:48px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;margin-bottom:14px}
+  .thanks h2{font-size:22px;margin:4px 0 8px}
+  .thanks ol{margin:10px 0 0 18px;font-size:13.5px;color:var(--muted)}
+  .thanks li{margin-bottom:6px}
+  .thanks a{color:var(--teal);font-weight:600}
+
+  /* ---------- FAQ + FOOT ---------- */
+  .faq{background:var(--bg-alt);border-top:1px solid var(--line);padding:22px 0}
+  .faq .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:12px 24px 12px 0;font-size:13.5px;font-weight:600;color:var(--navy);position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:2px;top:8px;font-size:20px;font-weight:400;color:var(--orange);transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq p{font-size:13px;color:var(--muted);padding:0 0 12px}
+  .foot{padding:16px 0;font-size:12.5px;color:var(--muted)}
+  .foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .foot a{color:var(--teal);text-decoration:none;font-weight:600}
+
+  @media (max-width:1060px){ .grid{grid-template-columns:1fr;gap:28px} }
+  @media (max-width:760px){
+    .wrap{padding:0 16px}
+    .plan{padding:28px 0 32px}
+    .faq .wrap,.fields{grid-template-columns:1fr}
+    .advisory{grid-template-columns:1fr}
+    .adv-mark{display:none}
+    .pillar{grid-template-columns:1fr;gap:6px}
+    .steps li{grid-template-columns:26px 1fr}
+    .steps .ph{display:none}
+    .card-head,.card-body{padding-left:18px;padding-right:18px}
+  }
+</style>
+</head>
+<body>
+
+<main class="plan" id="plan">
+  <div class="wrap grid">
+
+    <!-- LEFT -->
+    <div>
+      <div class="eyebrow">Plan your programme</div>
+      <h1>The platform, and everything it takes to get it used.</h1>
+      <p class="lead">Whether you are building national trust and identity infrastructure or getting more from one you already have, TECH5 brings <b>the technology and the advisory around it</b>: policy, architecture and investment, from the first decision to services citizens use every day.</p>
+
+      <div class="path">
+        <div class="path-head">
+          <h2>From DPI to <span class="dpe">DPE</span></h2>
+          <span>Start at the service. Work backwards.</span>
+        </div>
+        <ol class="steps">
+          <li class="s1"><div class="dot">1</div><div><b>Pick the service that must go live</b><small>e.g. opening a bank account from a phone</small></div><span class="ph">Decide</span></li>
+          <li class="s2"><div class="dot">2</div><div><b>Work backwards to the decision</b><small>Who decides, and which instrument gives it force</small></div><span class="ph">Decide</span></li>
+          <li class="s3"><div class="dot">3</div><div><b>Make it investable</b><small>Business case, PPP and capital, with no budget line needed</small></div><span class="ph">Decide</span></li>
+          <li class="s4"><div class="dot">4</div><div><b>Build on open standards</b><small>T5-OmniTrust, sovereign and owned by the national team</small></div><span class="ph ph-b">Build</span></li>
+          <li class="s5"><div class="dot">5</div><div><b>Onboard institutions</b><small>Banks, ministries and telcos, on a schedule</small></div><span class="ph ph-a">Adopt</span></li>
+        </ol>
+        <div class="repeat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+          <span><b>Then repeat.</b> One institution, one service, one citizen at a time.</span>
+        </div>
+      </div>
+
+      <aside class="advisory">
+        <div class="adv-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <div class="eyebrow" style="color:var(--teal)">TECH5 Advisory Services</div>
+          <p><b>Need advice before, or without, a build?</b> We're happy to help. Our advisory is led by experienced professionals who are actively implementing national programmes today, across policy, architecture and investment, in Africa, Asia-Pacific and the Americas.</p>
+          <div class="adv-tags"><span>Policy &amp; legal</span><span>Architecture &amp; standards</span><span>Commercial &amp; investment</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="frame">
+      <div class="card">
+        <div class="card-head">
+          <div class="eyebrow">Free consultation</div>
+          <h2>Tell us where you are.</h2>
+          <p>Four short questions. A senior advisor will be in touch.</p>
+          <div class="progress" id="progress"><i></i><i></i><i></i><i></i></div>
+        </div>
+
+        <form id="leadForm" class="card-body" novalidate>
+          <div class="q" data-q="who">
+            <div class="q-label"><span class="q-num">01</span> Who are you?</div>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="who" value="Government ministry or agency"><span>Government ministry or agency</span></label>
+              <label class="chip"><input type="radio" name="who" value="Implementation partner / integrator"><span>Implementation partner</span></label>
+              <label class="chip"><input type="radio" name="who" value="Development partner / funder"><span>Funder or development partner</span></label>
+              <label class="chip"><input type="radio" name="who" value="Regional or multilateral body"><span>Regional body</span></label>
+              <label class="chip"><input type="radio" name="who" value="Bank, telco or private sector"><span>Bank, telco or private sector</span></label>
+            </div>
+            <div class="err">Please pick one.</div>
+          </div>
+
+          <div class="q" data-q="stage">
+            <div class="q-label"><span class="q-num">02</span> Where is the programme today?</div>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="stage" value="Exploring / deciding"><span>Exploring</span></label>
+              <label class="chip"><input type="radio" name="stage" value="Ready to build / procuring"><span>Ready to build</span></label>
+              <label class="chip"><input type="radio" name="stage" value="Live, low adoption"><span>Live, low adoption</span></label>
+              <label class="chip"><input type="radio" name="stage" value="Stalled"><span>Stalled</span></label>
+            </div>
+            <div class="err">Please pick one.</div>
+          </div>
+
+          <div class="q" data-q="needs">
+            <div class="q-label"><span class="q-num">03</span> What can we help with? <span class="hint">Select any</span></div>
+            <div class="services">
+              <div class="pillar p1"><div class="pillar-name">Technology</div><div class="chips">
+                <label class="chip"><input type="checkbox" name="needs" value="Platform build (T5-OmniTrust)"><span>Platform build</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Digital wallet & credentials"><span>Wallet &amp; credentials</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Architecture & standards"><span>Architecture &amp; standards</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Integration (registry, banks, telcos)"><span>Integration</span></label>
+              </div></div>
+              <div class="pillar p2"><div class="pillar-name">Policy &amp; legal</div><div class="chips">
+                <label class="chip"><input type="checkbox" name="needs" value="National roadmap"><span>Roadmap</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Governance design"><span>Governance</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Legal instruments"><span>Legal instruments</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Regional integration"><span>Regional integration</span></label>
+              </div></div>
+              <div class="pillar p3"><div class="pillar-name">Commercial</div><div class="chips">
+                <label class="chip"><input type="checkbox" name="needs" value="Business case"><span>Business case</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="PPP structuring"><span>PPP</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Capital raise"><span>Capital raise</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Go-to-market"><span>Go-to-market</span></label>
+              </div></div>
+              <div class="pillar p4"><div class="pillar-name">Adoption</div><div class="chips">
+                <label class="chip"><input type="checkbox" name="needs" value="Relying-party onboarding"><span>Onboarding institutions</span></label>
+                <label class="chip"><input type="checkbox" name="needs" value="Training & certification"><span>Training</span></label>
+              </div></div>
+            </div>
+            <div class="chips notsure"><label class="chip"><input type="checkbox" name="needs" value="Not sure yet"><span>Not sure yet, help me decide</span></label></div>
+            <div class="err">Please pick at least one.</div>
+          </div>
+
+          <div class="q" data-q="details">
+            <div class="q-label"><span class="q-num">04</span> Your details</div>
+            <div class="fields">
+              <input type="text" name="country" id="country" placeholder="Country" autocomplete="country-name">
+              <input type="text" name="institution" id="institution" placeholder="Ministry, agency or organisation" autocomplete="organization">
+              <div class="full partner-only"><input type="text" name="client" placeholder="Government you are supporting (optional)"></div>
+              <input type="text" name="name" placeholder="Full name" autocomplete="name">
+              <input type="text" name="role" placeholder="Role / title" autocomplete="organization-title">
+              <input class="full" type="email" name="email" placeholder="Work email" autocomplete="email">
+            </div>
+            <div class="err">Please add country, organisation, name and a valid email.</div>
+          </div>
+
+          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button class="btn" type="submit" id="submitBtn">Receive my free consultation
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <ul class="covers">
+            <li>Senior advisors, not a sales demo</li>
+            <li>A first view of your first service</li>
+            <li>Briefing material for your team</li>
+          </ul>
+          <p class="fine">Treated in confidence. Prefer email? <a href="mailto:Tech5Advisory@tech5-sa.com">Tech5Advisory@tech5-sa.com</a></p>
+        </form>
+
+        <div class="thanks" id="thanks" aria-live="polite">
+          <div class="tick"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div class="eyebrow" style="color:var(--teal)">Request received</div>
+          <h2 id="thanksTitle">Thank you.</h2>
+          <ol>
+            <li>An advisor reviews your answers and replies within two working days.</li>
+            <li>We agree a time for your free consultation, remote or in person.</li>
+            <li>You receive briefing material ahead of the session.</li>
+          </ol>
+          <p class="fine" style="margin-top:14px">Anything to add? Email <a href="mailto:Tech5Advisory@tech5-sa.com">Tech5Advisory@tech5-sa.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="faq">
+  <div class="wrap">
+    <details>
+      <summary>Is the consultation really free?</summary>
+      <p>Yes. It is part of our free education package for governments and the partners who support them, with no obligation to engage further.</p>
+    </details>
+    <details>
+      <summary>Do we have to use T5-OmniTrust?</summary>
+      <p>No. Our advice is built on open standards, so the country stays free to build, buy or switch. Where T5-OmniTrust fits, we will say so.</p>
+    </details>
+    <details>
+      <summary>Can a partner or funder ask for a government?</summary>
+      <p>Yes. Tell us which government you are supporting and we will shape the session around it.</p>
+    </details>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>TECH5 · Advisory &amp; Commercialisation</span>
+    <!-- WEB TEAM: point this to the T5-OmniTrust page URL -->
+    <span><a href="/t5-omnitrust">See how T5-OmniTrust works →</a> &nbsp;·&nbsp; <a href="mailto:Tech5Advisory@tech5-sa.com">Tech5Advisory@tech5-sa.com</a></span>
+  </div>
+</footer>
+
+<script>
+/* ------------------------------------------------------------------
+   WEB TEAM: set FORM_ENDPOINT to your CRM / form handler (HubSpot,
+   Salesforce Web-to-Lead, Formspree, or your own API). It receives a
+   JSON POST. If left empty, submission falls back to opening a
+   pre-filled email to LEAD_EMAIL in the visitor's mail client.
+------------------------------------------------------------------- */
+const FORM_ENDPOINT = "";
+const LEAD_EMAIL = "Tech5Advisory@tech5-sa.com";
+
+const form = document.getElementById('leadForm');
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const val = n => (form.elements[n].value || '').trim();
+
+function status(){
+  const d = new FormData(form);
+  return {
+    who: !!d.get('who'),
+    stage: !!d.get('stage'),
+    needs: d.getAll('needs').length > 0,
+    details: !!val('country') && !!val('institution') && !!val('name') && emailRe.test(val('email'))
+  };
+}
+function updateProgress(){
+  const s = Object.values(status());
+  document.querySelectorAll('#progress i').forEach((el,i)=>el.classList.toggle('on', s[i]));
+}
+function validate(){
+  const s = status();
+  Object.entries(s).forEach(([k,ok]) => form.querySelector('[data-q="'+k+'"]').classList.toggle('invalid', !ok));
+  ['country','institution','name'].forEach(n => form.elements[n].setAttribute('aria-invalid', !val(n)));
+  form.elements.email.setAttribute('aria-invalid', !emailRe.test(val('email')));
+  return Object.values(s).every(Boolean);
+}
+
+form.addEventListener('change', e => {
+  if (e.target.name === 'who') {
+    const partner = /Implementation|Development|Regional/.test(e.target.value);
+    form.classList.toggle('is-partner', partner);
+    document.getElementById('country').placeholder = partner ? 'Country you are supporting' : 'Country';
+    document.getElementById('institution').placeholder = partner ? 'Your organisation' : 'Ministry, agency or organisation';
+  }
+  if (e.target.name === 'needs' && e.target.checked) {
+    form.querySelectorAll('input[name=needs]').forEach(cb => {
+      if (e.target.value === 'Not sure yet' ? cb !== e.target : cb.value === 'Not sure yet') cb.checked = false;
+    });
+  }
+  updateProgress();
+  const q = e.target.closest('.q');
+  if (q && q.classList.contains('invalid')) validate();
+});
+form.addEventListener('input', e => {
+  updateProgress();
+  const q = e.target.closest('.q');
+  if (q && q.classList.contains('invalid')) validate();
+});
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (form.elements.website.value) return; // honeypot
+  if (!validate()) { form.querySelector('.q.invalid').scrollIntoView({behavior:'smooth',block:'center'}); return; }
+
+  const d = new FormData(form);
+  const lead = {
+    respondentType: d.get('who'),
+    stage: d.get('stage'),
+    services: d.getAll('needs'),
+    country: val('country'),
+    organisation: val('institution'),
+    governmentClient: val('client'),
+    name: val('name'),
+    role: val('role'),
+    email: val('email'),
+    source: 'Plan your programme · Free consultation',
+    submittedAt: new Date().toISOString()
+  };
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+
+  if (FORM_ENDPOINT) {
+    try {
+      const r = await fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(lead)});
+      if (!r.ok) throw new Error(r.status);
+    } catch (err) {
+      btn.disabled = false;
+      alert('Sorry, we could not send your request. Please email ' + LEAD_EMAIL + ' directly.');
+      return;
+    }
+  } else {
+    const subject = 'Free consultation request: ' + lead.country + ' / ' + lead.organisation;
+    const body = [
+      'Respondent: ' + lead.respondentType,
+      'Programme stage: ' + lead.stage,
+      'Help needed: ' + lead.services.join(', '),
+      'Country: ' + lead.country,
+      'Organisation: ' + lead.organisation,
+      'Government client: ' + (lead.governmentClient || '-'),
+      'Name: ' + lead.name,
+      'Role: ' + (lead.role || '-'),
+      'Email: ' + lead.email
+    ].join('\n');
+    window.location.href = 'mailto:' + LEAD_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  document.getElementById('thanksTitle').textContent = 'Thank you, ' + lead.name.split(' ')[0] + '.';
+  form.style.display = 'none';
+  document.getElementById('thanks').style.display = 'block';
+});
+</script>
+</body>
+</html>
